@@ -12,35 +12,61 @@ public class DesafioModulo1_2 {
         Map<String, String> cadastro = new HashMap<String, String>();
 
 
-        //ENTREGA MINIMA*********************
-        //Entrega Mínima: O sistema permite, via terminal,
-        // inserir pelo menos 1 funcionário nome, telefone,
-        // email e CPF.
-        //em uma lista e retornar o mesmo na tela.
+        //ENTREGA MEDIA *********************
+        //Entrega Media: O sistema permite adicionar mais de um funcionário
+        // e apresenta
+        //um menu para decidir se deverá:
+        //1. Adicionar mais funcionários.
+        //2. Exibir a lista de todos os funcionários cadastrados.
+        //3. Encerrar o programa.
 
         //VARIAVEIS
         String nomeFuncionario = "";
         String telefoneFuncionario = "";
         String emailFuncionario = "";
         String cpfFuncionario = "";
+        boolean menu = true;
+        int menuopcao = 0;
 
-        //ENTRADA DADOS DO USUARIO
-        System.out.printf("\n******* CADASTRO DE FUNCIONARIOS *******\n");
+        //menu
+        while (menu = true) {
+            System.out.println("***** Cadastro de Funcincionario *****");
+            System.out.println("[1] Adicionar Funcionarios");
+            System.out.println("[2] Exibir Lista de Funcionarios");
+            System.out.println("[3] Sair do Programa");
+            menuopcao = leitor.nextInt();
+            leitor.nextLine();
 
-        System.out.printf("\nPor favor, digite o nome do funcionario: \n");
-        nomeFuncionario = leitor.nextLine();
+            if (menuopcao == 1){
+                //ENTRADA DADOS DO USUARIO
+                System.out.printf("\n******* CADASTRO DE FUNCIONARIOS *******\n");
 
-        System.out.printf("\nPor favor, digite o CPF do funcionario: \n");
-        cpfFuncionario = leitor.nextLine();
+                System.out.printf("\nPor favor, digite o nome do funcionario: \n");
+                nomeFuncionario = leitor.nextLine();
 
-        System.out.printf("\nPor favor, digite o email do funcionario: \n");
-        emailFuncionario = leitor.nextLine();
+                System.out.printf("\nPor favor, digite o CPF do funcionario: \n");
+                cpfFuncionario = leitor.nextLine();
 
-        System.out.printf("\nPor favor, digite o número de telefone do funcionario: \n");
-        telefoneFuncionario = leitor.nextLine();
+                System.out.printf("\nPor favor, digite o email do funcionario: \n");
+                emailFuncionario = leitor.nextLine();
 
-        //Almacenando od dados
-        cadastro.put("O CPF: " + cpfFuncionario, " Funcionario: " + nomeFuncionario + " E-mail: " + emailFuncionario + " Telefone: " + telefoneFuncionario);
+                System.out.printf("\nPor favor, digite o número de telefone do funcionario: \n");
+                telefoneFuncionario = leitor.nextLine();
+
+                //Almacenando od dados
+                cadastro.put("O CPF: " + cpfFuncionario, " Funcionario: " + nomeFuncionario + " E-mail: " + emailFuncionario + " Telefone: " + telefoneFuncionario);
+
+            }else {
+                System.out.println("Marque uma opçao valida");
+            }
+
+
+
+        }
+
+
+
+
 
 
         //EXIBIR LISTA
