@@ -36,8 +36,8 @@ public class DesafioModulo1_2 {
             System.out.println("[3] Sair do Programa");
             menuopcao = leitor.nextInt();
             leitor.nextLine();
-
-            if (menuopcao == 1){
+            //[1] Adicionar Funcionarios
+            if (menuopcao == 1) {
                 //ENTRADA DADOS DO USUARIO
                 System.out.printf("\n******* CADASTRO DE FUNCIONARIOS *******\n");
 
@@ -55,18 +55,27 @@ public class DesafioModulo1_2 {
 
                 //Almacenando od dados
                 cadastro.put("O CPF: " + cpfFuncionario, " Funcionario: " + nomeFuncionario + " E-mail: " + emailFuncionario + " Telefone: " + telefoneFuncionario);
-
-            }else {
+                System.out.println("Cadastro finalizado com Suceso");
+            //[2] Exibir Lista de Funcionarios
+            } else if (menuopcao == 2) {
+                // validando para percorrer a lista
+                if (cadastro.isEmpty() == true) {
+                    System.out.println("Por Favor Adicione Funcionarios a su cadastro");
+                } else {
+                    for (String referencia : cadastro.keySet()) {
+                        System.out.printf("\n Funcionario: \t%S" + cadastro.get(referencia));
+                    }
+                }
+                //[3] Sair do Programa
+            } else if (menuopcao == 3) {
+                System.out.println("Saindo do Programa");
+                menu = false;
+            } else {
                 System.out.println("Marque uma opçao valida");
             }
 
 
-
         }
-
-
-
-
 
 
         //EXIBIR LISTA
