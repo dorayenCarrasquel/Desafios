@@ -86,8 +86,10 @@ public class DesafioModulo1_2 {
                         System.out.println("\nPor Favor Adicione Funcionarios a su cadastro");
 
                     } else {
+                        System.out.println("CPF\t Dados do Funcionario");
 
                         for (String referencia : cadastro.keySet()) {
+
                             System.out.println(referencia + cadastro.get(referencia));
                         }
                     }
@@ -101,8 +103,11 @@ public class DesafioModulo1_2 {
                     if (cpfFuncionario.isEmpty()) {
                         System.out.println("Não tem cadastro para ser excluidos");
                     } else {
-                        if (excluir.equals(cpfFuncionario)) {
+                        if (cadastro.containsKey(excluir)) {
                             cadastro.remove(excluir);
+                        }
+                        else{
+                            System.out.println("O CPF não existe :P");
                         }
                     }
                     break;
@@ -119,5 +124,6 @@ public class DesafioModulo1_2 {
                     System.out.println("Marque uma opçao valida");
             }
         }
+
     }
 }
